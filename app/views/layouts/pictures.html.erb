@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instantalbum</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <ul>
+    <li><%= link_to "InstantAlubum",pictures_path %></li>
+    <li><%= link_to "トップページ",pictures_path %></li>
+    <li><%= link_to "投稿する",new_picture_path %></li>
+    <li><%= link_to "ログアウト",new_picture_path %></li>
+  </ul>
+</header>
+
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+
+<%= yield %>
+
+<footer>
+  <p>© 2017 Wataru Inoue</p>
+</footer>
+</body>
+</html>
