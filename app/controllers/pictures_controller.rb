@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_picture, only: [:edit, :update, :destroy]
 
   def index
@@ -12,7 +13,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.create(pictures_params)
     if @picture.save
-      redirect_to_pictures_path, notice:"画像を投稿しました！"
+      redirect_to pictures_path, notice:"画像を投稿しました！"
     else
       render 'new'
     end
