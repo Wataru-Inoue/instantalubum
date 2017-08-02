@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Instantalbum</title>
+  <title>Instantalubum</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
 </head>
 <body>
 <header>
-  <p class="leckerli" ><%= link_to "InstantAlubum", pictures_path %></p>
-  <ul>
-    <li><%= link_to "トップページ", pictures_path %></li>
-    <li><%= link_to "投稿する", new_picture_path %></li>
-    <li><%= link_to "マイページ", edit_user_registration_path %></li>
-    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-  </ul>
+  
+  <nav class="navbar navbar-default">
+  <p id="logo" >InstantAlubum</p>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+        <span class="sr-only">メニュー</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="gnavi">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "トップページ", pictures_path %></li>
+        <li><%= link_to "投稿する", new_picture_path %></li>
+        <li><%= link_to "マイページ", edit_user_registration_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </nav>
 </header>
-
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
-
+  <p class="flash text-center"><%= notice %><%= alert %></p>
 <%= yield %>
 
-<footer>
-  <p>© 2017 Wataru Inoue</p>
+<footer id="footer" class="footer">
+  <div class="container">
+    <p>© 2017 Wataru Inoue</p>
+  </div>
 </footer>
 </body>
 </html>

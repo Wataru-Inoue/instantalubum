@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   }
   
   root 'top#index'
-
   #get 'top/index'
 
-  resources :pictures, only: [:index, :new, :edit, :update, :destroy, :show]
+  resources :pictures, only: [:index, :new, :create, :edit, :update, :destroy]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

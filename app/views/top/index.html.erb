@@ -1,20 +1,55 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 col-sm-12">
+  <div class="row" >
+    <div class="wrappser col-md-6 hidden-sm hidden-xs">
+
       <section>
         <img src= "<%= asset_path "main.jpg"%>">
       </section>
       <section>
         <h1 class="nicomoji">ようこそ！インスタントアルバム へ</h1>
         <p>本サイトはDIVE into CODEのカリキュラムでInstagramクローンサイトとして作成したものです。制作に際しては、Webフォントやフリー素材を利用しています。</p>
-        <p>また投稿された写真にはCSSgramを利用してフィルタ加工できるようにしています。</p>
         <p>なお、本サイトはHerokuにて運用していますが、Herokuの仕様により画像は一時保存しかされませんのでご注意ください。</p>
       </section>
+
     </div>
-    <div class="col-md-6 col-sm-12">
-      <section>
-      <h1 class="leckerli">InstantAlbum</h1>
-      </section>
+    <div class="wrapper col-md-offset-1 col-md-4 col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10">
+      <p class="toplogo">InstantAlubum</p>
+
+      <h1 class="h2 title">ユーザー登録</h1>
+
+      <%= alert %>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+        </div>
+
+        <div class="field">
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認用）" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "ユーザー登録", class: "btn btn-primary btn-block" %>
+        </div>
+          <p>登録後、メールアドレスに確認メールをお送りします。アカウントを有効にしてからログインしてください。</p>
+       <hr>
+      <% end %>
+      <div>
+        <%= render "devise/shared/links_top" %>
+      </div>
     </div>
   </div>
 </div>

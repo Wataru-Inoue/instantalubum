@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_picture, only: [:edit, :update, :destroy]
+  before_action :set_picture, only: [:edit, :update, :destroy, :show]
 
   def index
     @pictures = Picture.all
@@ -26,19 +26,20 @@ class PicturesController < ApplicationController
 
   def update
     @picture.update(pictures_params)
+    redirect_to pictures_path, notice: "投稿画像を編集しました！"
   end
 
   def destroy
     @picture.destroy
+    redirect_to pictures_path, notice: "投稿画像を削除しました！"
   end
 
   def show
-    @picture = Picture.find(params[:id])
   end
 
 private
   def pictures_params
-    params.require(:picture).permit(:title, :content)
+    params.require(:picture).permit(:title, :content, :picture_url)
   end
 
   def set_picture

@@ -1,17 +1,36 @@
-<div>
-
-<p><%= notice %></p>
-
-<h1>投稿画像一覧</h1>
-
-<%= link_to "新規投稿", new_picture_path %>
+<div class="container">
+  <div class="row">
+    <h1 class="h2 title">投稿画像一覧</h1>
+  </div>
+  <div class="row" id="NewPostBox">
+    <div id="NewPost" class="btn btn-default">
+      <%= link_to new_picture_path do %>
+        <%= fa_icon("picture-o", text: "新規投稿", left: true) %>
+      <% end %>
+    </div>
+  </div>
 
 <% @pictures.each do |picture| %>
-  <p>タイトル：<%= picture.title %></p>
-  <p>コメント：<%= picture.content %></p>
-  <p>投稿日時：<%= picture.updated_at %></p>
-  <%= link_to "画像を編集する", edit_picture_path(picture.id) %>
-  <%= link_to "画像を削除する", picture_path(picture.id), method: :delete, data:{confirm: '本当に削除して良いですか？' }%>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="grid-img">
+      <P><%= image_tag picture.picture_url if picture.picture_url?%></p> 
+    </div> 
+    <div>
+      <p><%= profile_img(picture.user) %>
+         <%= picture.user.name  %></p>
+    </div>
+      <p>タイトル：<%= picture.title %></p>
+      <p>コメント：<%= picture.content %></p>
+      <p>投稿日時：<%= picture.updated_at %></p>
+    <div>
+      <%= link_to edit_picture_path(picture.id) do %>
+        <%= fa_icon("pencil-square-o 2x") %>
+      <% end %>
+      <%= link_to picture_path(picture.id), method: :delete, data:{confirm: '本当に削除して良いですか？' } do %>
+        <%= fa_icon("trash-o 2x") %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 
 </div>

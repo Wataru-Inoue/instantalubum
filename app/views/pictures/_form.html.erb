@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <%= form_for(@picture) do |f| %>
   <% if @picture.errors.any? %>
@@ -12,12 +11,19 @@
       </ul>
     </div>
   <% end %>
+  <span class="picture">
+  <%= f.file_field :picture_url %>
+  </span>
+  <br>
+  <%= f.label :タイトル %>
+  <%= f.text_field :title, :size => "50" %>
+  <br>
+  <%= f.label :コメント %>
+  <%= f.text_area :content, :size => "50x4" %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <br>
-  <%= f.submit %>
+  <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+   <br>
+
+  <%= link_to "一覧画面に戻る", pictures_path %>
+
 <% end %>

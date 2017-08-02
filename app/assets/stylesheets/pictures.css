@@ -1,0 +1,36 @@
+#logo{
+  font-size: 30px;
+  position: absolute;
+  left: 20px;
+  margin-top: 5px;
+  z-index: 10;
+  font-family: 'Leckerli One', cursive;
+}
+
+.grid-img{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.grid-img img{
+  position: absolute;
+}
+
+.title{
+  text-align: center;
+}
+
+#NewPostBox{
+ text-align: center;
+}
+
+#NewPost{
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  vertical-align: center;
+  background-color: #afeeee;
+  border: none;
+}

@@ -11,7 +11,7 @@
       </div>
       
       <div class="field">
-        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "名前" %>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "名前" %>
       </div>
     
   <% if @user.provider.blank? %>
@@ -51,9 +51,9 @@
       </div>
     <% end %>
     
-    <h3>アカウントをキャンセルする</h3>
+    <h3>アカウントを削除する</h3>
     
-    <p>Unhappy? <%= button_to "アカウント作成を中止する", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete %></p>
+    <p>気に入りませんか？ <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete %></p>
     
     <%= link_to "戻る", :back %>
     

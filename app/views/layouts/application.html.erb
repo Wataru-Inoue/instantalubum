@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Instantalbum</title>
+  <title>Instantalubum</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-  <ilnk href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css" rel="stylesheet">
 </head> 
 <body>
 
 <%= yield %>
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <p>© 2017 Wataru Inoue</p>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,23 @@
+
+ .field{
+   padding-bottom: 10px;
+   margin: auto;
+ }
+
+#footer{
+  text-align: center;
+  height: 30px;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+// 以下webフォントの設定
+
+#toplogo{
+  font-size: 20px;
+  font-family: 'Leckerli One', cursive;
+}
+
+.nicomoji{
+  font-family: "Nico Moji";
+ }
