@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20170731035045) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.boolean  "admin",                  default: false
-    t.string   "uid"
-    t.string   "provider"
+    t.string   "uid",                    default: "",    null: false
+    t.string   "provider",               default: "",    null: false
     t.string   "image_url"
     t.string   "avatar"
   end
