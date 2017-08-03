@@ -7,14 +7,35 @@
   font-family: 'Leckerli One', cursive;
 }
 
-.grid-img{
+.squareBox{
+  width: 100%;
+  height: 100%;
   position: relative;
+}
+.squareBox::before{
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.squareBox p{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  padding-bottom: 100%;
+}
+.objectFit {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-.grid-img img{
-  position: absolute;
+.pictureMenu{
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .title{

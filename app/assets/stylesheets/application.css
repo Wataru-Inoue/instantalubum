@@ -14,5 +14,6 @@
  *= require bootstrap_and_overrides.css
  *= require devise.css
  *= require pictures.css
+ *= require modal.css
  *= require_self
  */
