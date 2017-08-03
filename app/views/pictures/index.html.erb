@@ -16,14 +16,11 @@
       <p><%= image_tag picture.picture_url, :class => "objectFit" %></p>
     </div> 
     <div class="clearfix pictureMenu">
-      <div class="pull-left">
+      <div class="pull-left name-over">
         <%= picture.user.name  %>
       </div>
       <div class="pull-right">
-        <button type="button">
-          <%= fa_icon("external-link 2x") %>
-        </button>
-        <%= link_to , picture_path(picture.id), { :class => "modalBtn" } do %>
+        <%= link_to picture_path(picture.id), { :class => "modalBtn" } do %>
           <%= fa_icon("external-link 2x") %>
         <% end %>
         <%= link_to edit_picture_path(picture.id) do %>

@@ -35,6 +35,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+    render  layout: 'sub'
   end
 
 private

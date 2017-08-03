@@ -12,6 +12,7 @@ a:link,a:visited,a:active,a:hover { text-decoration: none;}
 /* ------------------------------
    CHAPTER ELEMENTS
 ------------------------------ */
+
 #mdOverlay {
 	top: 0;
 	left: 0;
@@ -23,47 +24,35 @@ a:link,a:visited,a:active,a:hover { text-decoration: none;}
 }
 
 #mdWindow {
-	margin-top: -200px;
-	margin-left: -250px;
-	top: 50%;
-	left: 50%;
-	width: 500px;
-	height: 400px;
-	position: fixed;
-	z-index: 98;
+	top: 10vh;
+  left: 10vw;
+	width: auto;
+	height: auto;
+	max-width: 80vw;
+  position: absolute;
+  z-index: 98;
 	background: #fff;
-	display: none;
+  display: none;
+  
 }
 
 #mdWindow > .mdClose {
-	top: -15px;
-	right: -15px;
+  right: -15px;
+  top: -15px;
 	width: 30px;
 	height: 30px;
-	line-height: 30px;
+	line-height: 25px;
 	color: #fff;
-	font-size: 1.5em;
-	background: #757575;
+  font-size: 30px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+	background: #1f38dc;
 	border-radius: 30px;
 	position: absolute;
 	z-index: 99;
 	cursor: pointer;
 	box-shadow: 0 0 3px 0 #000;
-}
-
-.modalBtn {
-	padding: 15px 20px;
-	color: #444;
-	font-size: 14px;
-	font-weight: bold;
-	text-align: center;
-	display: inline-block;
-	overflow: hidden;
-	background: #ececec;
-	border: #fff 1px solid;
-	border-radius: 5px;
-	box-shadow: 0 0 3px #666;
-	transition: all 0.2s ease-in-out;
 }
 
 .modalBtn:hover {
@@ -75,11 +64,12 @@ a:link,a:visited,a:active,a:hover { text-decoration: none;}
 }
 
 #contWrap {
-	margin: 30px auto;
-	padding: 0 20px;
+	margin: 5vh auto;
+	padding: 0 5vw;
 	width: 100%;
-	height: 340px;
-	box-sizing: border-box;
+	height: 100%;
+	max-width: 70vw;
+	object-fit: contain;
 	overflow-y: auto;
 }
 
@@ -95,4 +85,10 @@ a:link,a:visited,a:active,a:hover { text-decoration: none;}
 #modalWrapper p {
 	padding-bottom: 2em;
 	font-size: 1em;
+}
+
+#modalWrapper img {
+	object-fit: contain;
+	max-width: 100%;
+	max-height: 100%;
 }
